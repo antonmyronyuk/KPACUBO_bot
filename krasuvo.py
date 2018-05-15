@@ -20,7 +20,7 @@ make_italic = StringWrapper('<i>', '</i>')
 @make_bold
 def make_krasuvo(text: str):
     return ' '.join(
-        (char.upper() for char in list(text))
+        (char.upper() for char in text)
     )
 
 # print(make_krasuvo.__name__)
