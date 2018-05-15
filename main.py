@@ -19,8 +19,7 @@ def query_text(query):
     res_text = make_krasuvo(text)
     res = telebot.types.InlineQueryResultArticle(
         id='1',
-        title='K P A C U B O',
-        description=res_text,  # TODO: show correct html there
+        title='Click to send message K P A C U B O',
         input_message_content=telebot.types.InputTextMessageContent(
             message_text=res_text,
             parse_mode='HTML'

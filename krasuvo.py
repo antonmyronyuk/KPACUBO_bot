@@ -1,6 +1,19 @@
 from functools import wraps
 
 
+class StringWrapper:
+    def __init__(self, start='', end=''):
+        self.start = start
+        self.end = end
+
+    def __call__(self, func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            return str(func(*args, **kwargs)).join([self.start, self.end])
+        return wrapper
+
+
+'''
 def make_bold(func):  # TODO: make class decorator
     @wraps(func)
     def wrapper(*args, **kwargs):
@@ -9,6 +22,10 @@ def make_bold(func):  # TODO: make class decorator
         res_str += '</b>'
         return res_str
     return wrapper
+'''
+
+make_bold = StringWrapper('<b>', '</b>')
+make_italic = StringWrapper('<i>', '</i>')
 
 
 @make_bold
