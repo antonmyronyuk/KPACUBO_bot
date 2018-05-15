@@ -13,17 +13,6 @@ class StringWrapper:
         return wrapper
 
 
-'''
-def make_bold(func):  # TODO: make class decorator
-    @wraps(func)
-    def wrapper(*args, **kwargs):
-        res_str = '<b>'
-        res_str += func(*args, **kwargs)
-        res_str += '</b>'
-        return res_str
-    return wrapper
-'''
-
 make_bold = StringWrapper('<b>', '</b>')
 make_italic = StringWrapper('<i>', '</i>')
 
