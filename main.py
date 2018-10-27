@@ -1,7 +1,8 @@
 import logging
-import telebot
-import config
 
+import telebot
+
+import config
 from krasuvo import make_krasuvo
 
 
